@@ -67,11 +67,12 @@
     // Bind dragging events
     drags(cur.find(options.resizeHandleSelector), cur.find(options.resizableImageContainerSelector), cur);
 
+    var resizableImage = cur.find(options.resizableImageSelector);
+
     // Update sliders on resize.
     // Because we all do this: i.imgur.com/YkbaV.gif
     $(window).resize(function(){
-      var width = cur.width()+'px';
-      cur.find(options.resizableImageSelector).css('width', width);
+      resizableImage.css('width', cur.width()+'px');
     });
 
     return this;
